@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <div class="chat-title">
+                <span class="chat-icon">💬</span>
+                <h3>Текстов чат</h3>
+            </div>
+            <button class="close-btn" id="closeBtn">✕</button>
+        </div>
+        
+        <div class="chat-body">
+            <div class="input-section">
+                <textarea 
+                    id="messageInput" 
+                    placeholder="Напишете съобщение..."
+                    maxlength="100"
+                    rows="3"
+                ></textarea>
+                <div class="character-count">
+                    <span id="charCount">0</span>/100
+                </div>
+            </div>
+            
+            <div class="button-section">
+                <button class="secondary-btn" id="cancelBtn">Отказ</button>
+                <button class="primary-btn" id="sendBtn">Изпрати</button>
+            </div>
+            
+            <div class="help-text">
+                <p>Съобщението ще се покаже над главата ви за 5 секунди</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
