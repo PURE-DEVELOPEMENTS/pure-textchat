@@ -8,7 +8,7 @@ A text communication system for RedM that allows players to display text message
 - **Typing Animation**: Realistic notebook writing animation while typing
 - **Configurable Settings**: Customizable text appearance, duration, and distance
 - **User-Friendly UI**: Clean, modern interface for message input
-- **Bulgarian Language Support**: UI text in English
+- **Language Support**: UI text in English
 - **Character Limit**: Configurable message length limits (default: 100 characters)
 
 ## Installation
