@@ -61,12 +61,34 @@ function StopNotebookAnimation()
 end
 
 -- Command to open text chat
-RegisterCommand('textchat', function()
+RegisterCommand('tb', function()
     print("^2[TextChat]^7 Command triggered!")
     if not isUIOpen then
         openTextChat()
     else
         print("^3[TextChat]^7 UI already open!")
+    end
+end, false)
+
+-- Say command to directly display text overhead
+RegisterCommand('say', function(source, args, rawCommand)
+    local message = string.sub(rawCommand, 5) -- Remove "/say " from the beginning
+    message = message:gsub("^%s*(.-)%s*$", "%1") -- Trim whitespace
+    
+    if message and string.len(message) > 0 then
+        if string.len(message) <= Config.UISettings.max_length then
+            -- Set current player's text
+            currentText = message
+            textEndTime = GetGameTimer() + Config.TextSettings.duration
+            
+            -- Sync with other players
+            TriggerServerEvent('textchat:updateText', message)
+            print("^2[TextChat]^7 Say message set: " .. message)
+        else
+            print("^1[TextChat]^7 Message too long! Maximum " .. Config.UISettings.max_length .. " characters allowed.")
+        end
+    else
+        print("^3[TextChat]^7 Usage: /say [message]")
     end
 end, false)
 
